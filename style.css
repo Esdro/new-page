@@ -3,4 +3,11 @@
 
 *, *::after,*::before {
     font-family: Inter 'Open Sans';
+    box-sizing: border-box;
+}
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
 }
