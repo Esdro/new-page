@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+   <link rel="stylesheet" href="/style.css">
+    <title>  Nouvelle Page </title>
+</head>
+
+<body>
+   
+
+    <h1>Hello </h1>
+
+
+
+
+
+
+
+    <script>
+        let btn = document.getElementById('btn');
+        let input = document.getElementById('recherche');
+        let error = document.querySelector('.error')
+        error.innerHTML = "";
+        btn.classList.add('null');
+        let err = "";
+        var value = "";
+        input.addEventListener('keyup', (e) => {
+            value = e.target.value.trim();
+            if (!value) {
+                btn.classList.add('null');
+                err = ` Vous devez saisir quelque chose`;
+            } else {
+                err = "";
+                btn.classList.add('ok');
+            }
+            error.innerHTML = err;
+            return value;
+        })
+
+        btn.addEventListener('click', () => {
+
+            if (value.length == 0) {
+                btn.classList.add('null');
+                return null;
+            } else {
+                let i = "https://diag.nsystools.com/labels/print-pdf-document/CERTIFICATE/647317b0-0c0c-41ff-ae65-711af92ea04e/" + value;
+                btn.classList.add('ok');
+                window.open(i, "_blank");
+            }
+
+        })
+    </script>
+</body>
+
+</html>
