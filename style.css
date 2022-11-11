@@ -1,50 +1,53 @@
-@import url(https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap);
-
 *,
 *::after,
 *::before {
-    font-family: Inter 'Open Sans';
     box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Code Pro;
+    src: url("/code_pro.otf");
 }
 
 body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    height: 100%;
+    font-family: 'Inter', sans-serif;
 
 }
-:root{
+
+:root {
     --accent-color: #fedc00;
 }
 
 .logo-container {
     width: 100%;
     display: flex;
-    border-radius: 0% 0% 50% 50%;
-    height: 200px;
-    background-color: white;
+    border-radius: 0 0 0 150px;
+    height: 400px;
     align-items: center;
     background-color: var(--accent-color);
-    clip-path: polygon(50% 0%, 82.5% 0%, 100% 0%, 65.1% 43%, 43.6% 66.5%, 14.5% 93.5%, 0.9% 94%, 0% 43%, 0% 0%);
-
+    transform: rotate(-10deg);
+    margin-top: -20rem;
+    margin-left: -4rem;
+    position: relative;
+    z-index: -1;
 }
 
-.fake-clip  {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-}
 
 
 .logo-container img {
     width: 100px;
+    position: absolute;
+    bottom: 5rem;
+    left: 5rem;
+    rotate: 10deg;
 }
-section.search-wrapper  {
+
+section.search-wrapper {
     width: 80%;
     margin-inline: auto;
-    padding: 1rem ;
     background-color: white;
     border-radius: 15px;
     display: flex;
@@ -53,13 +56,17 @@ section.search-wrapper  {
     border: 3px solid var(--accent-color);
     align-items: center;
 }
+
 section.search-wrapper .input-wrapper {
     flex: 70%;
     padding: 1rem;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: .8rem;
+}
+
+h1 {
+    font-family: Code Pro;
 }
 
 
@@ -70,23 +77,34 @@ section.search-wrapper .input-wrapper {
 .input-zone {
     position: relative;
     width: 80%;
-    height: 60px;
+    height: 48px;
     margin: 1rem 0rem;
+    border: 2px solid #ccc;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border-radius: 7px;
+    padding: 0 1rem;
 
 }
-.input-zone input{
+
+.input-zone input {
     width: 80%;
-    height: 100%;
-    border: 2px solid #ccc;
+    height: 95%;
+    border: none;
     box-sizing: border-box;
-    border-radius: 7px;
-    padding-left: 55px;
-    /* position: relative; */
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
-.input-zone input::placeholder{
+
+.input-zone input::placeholder {
     font-weight: 900;
     color: black;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem;  */
+    line-height: normal;
+    font-weight: bold;
 }
 
 
@@ -94,79 +112,112 @@ section.search-wrapper .input-wrapper {
 section.search-wrapper .input-info {
     flex: 30%;
     width: 100%;
-    background-color: rgb(96, 138, 180);
+    background-color: #8caedb;
     border-radius: 15px;
     padding: .7rem;
+    margin: .5rem;
 }
 
 section.search-wrapper .input-info header {
     margin-bottom: .5rem;
+    font-family: Code Pro;
 }
+
 section.search-wrapper .input-info ul li {
-    list-style: none;
-    font-size: .7rem;
-    line-height: 1.3;
+    list-style: disc;
+    font-size: .62rem;
+    line-height: 1.1;
     margin-bottom: .8rem;
+    font-family: 'banbury-regular', sans-serif;
+    font-weight: bold;
 }
-section.search-wrapper .input-info ul li:last-child{
+
+section.search-wrapper .input-info ul li:last-child {
     margin-bottom: .1rem;
 }
-ul{
+
+ul:not(.list-content) {
     margin: 0;
     padding: 0;
 }
+.error{
+    /* margin: 1rem 0; */
+    color: rgb(130, 12, 12);
+    animation: clignotant 1s ease-in-out  infinite both ;
+}
 
+@keyframes clignotant {
+    0% {
+     opacity: .1;
+    }
+    100% {
+    opacity: 1;
+    }
+  }
+ul.list-content {
+    list-style-type: disc;
+    padding: 0 0 .6rem;
+    margin: 0 .5rem;
+
+}
+#btn.ok {
+    cursor: pointer;
+    opacity: 1;
+    transition: all 350ms ease-in-out;
+}
+#btn.null {
+    cursor: not-allowed;
+    opacity: .7;
+}
 section {
     width: 80%;
     margin-inline: auto;
     align-self: flex-end;
 }
+
 section.button-wrapper {
     padding: 1rem 0;
     text-align: right;
 }
 
 .button-wrapper button {
-  background-color: white;
-  border: 1px solid #efefef;
-    padding: .1rem ;
+    background-color: white;
+    border: 1px solid #efefef;
+    padding: .1rem;
     border-radius: 4px;
     color: white;
     box-sizing: border-box;
     height: 60px;
 
 }
+
 .button-wrapper button a {
-    background-color: rgb(11, 181, 11);
+    background-color: #008037;
     border: none;
-    padding: .8rem ;
+    padding: .8rem;
     border-radius: 4px;
     line-height: 1.2;
     color: white;
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: 900;
+    font-family: Code Pro;
 
 }
 
-section.avantages {
-    padding: 1rem 0;
-}
 
-section.avantages ul{
+
+section.avantages ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    
+
 }
+
 section.avantages ul li {
-   flex: 45%;
-}
-section.avantages ul li  svg {
-    vertical-align: middle;
-    font-size: 1rem;
-    color: greenyellow;
+    flex: 45%;
+    font-weight: 300;
 }
 
 footer {
@@ -175,12 +226,67 @@ footer {
     text-align: center;
 }
 
-footer .copyright p {
-font-size: 1.5rem;
-line-height: 1.5;
+.copyright {
+    height: 70px;
+    overflow: hidden;
 }
 
 footer img {
-    width: 150px;
-    vertical-align: middle;
+    margin-top: -2.4rem;
+    width: 750px;
+    height: 150px;
+    transform: scale(1.5);
+}
+
+
+i.fa-check {
+    color: #008037;
+}
+
+i.fa-search {
+    color: #ccc;
+    font-size: 1.6rem;
+}
+
+li.avantage{
+    display: flex;
+    gap: .5rem;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+    }
+    .logo-container{
+        width: calc(100% + 4rem);
+    }
+    .logo-container img {
+        bottom: 2rem;
+        left: 5rem;
+    }
+  
+    .input-zone{
+        width: 100%;
+    }
+    section.search-wrapper {
+        flex-direction: column;
+        width: 95%;
+        padding: 1rem;
+    }
+    footer{
+        width: 95%;
+    }
+    footer img {
+        transform: scale(1.2);
+        width: 100%;
+    }
+    section {
+        width: 95%;
+    }
+    section.search-wrapper, ul.list-avantages{
+        width: 95%;
+    }
+    section.avantages ul li {
+        flex: 100%;
+    }
 }
