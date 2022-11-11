@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: Code Pro;
-    src: url("/code_pro.otf");
+    src: url("code_pro.otf");
 }
 
 body {
