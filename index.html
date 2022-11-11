@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
+    <meta name="description" content="Portail Officiel de téléchargement du Certificat de diagnostique - POINT GARANTIE">
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;600&display=swap"
       rel="stylesheet"
@@ -26,7 +27,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Nouvelle Page</title>
+    <title>Portail Officiel de téléchargement du Certificat de diagnostique - POIN GARANTIE</title>
   </head>
 
   <body>
@@ -127,16 +128,19 @@
       let error = document.querySelector(".error");
       error.innerHTML = "";
       btn.classList.add("null");
+      btn.title = " Vous devez saisir votre IMEI dans le champs réservé"
       let err = "";
       var value = "";
       input.addEventListener("keyup", (e) => {
         value = e.target.value.trim();
         if (!value) {
           btn.classList.add("null");
+          btn.title = " Vous devez saisir votre IMEI dans le champs réservé"
           err = ` Vous devez saisir quelque chose`;
         } else {
           err = "";
           btn.classList.remove("null");
+          btn.title = " Lancez désormais vitre recherche"
           btn.classList.add("ok");
         }
         error.innerHTML = err;
